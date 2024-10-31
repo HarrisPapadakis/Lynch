@@ -1,0 +1,16 @@
+<?php
+// Συνάρτηση για το άθροισμα δύο αριθμών
+function addNumbers($num1, $num2) {
+    return $num1 + $num2;
+}
+
+// Ορισμός δύο αριθμών
+$number1 = 10;
+$number2 = 20;
+
+// Υπολογισμός του αθροίσματος
+$result = addNumbers($number1, $number2);
+
+// Εμφάνιση του αποτελέσματος
+echo "Το άθροισμα των " . $number1 . " και " . $number2 . " είναι: " . $result;
+?>
