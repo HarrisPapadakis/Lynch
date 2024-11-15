@@ -1,0 +1,19 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Δώσε έναν αριθμό: ");
+        int number = int.Parse(Console.ReadLine());
+
+        if (number % 2 == 0)
+        {
+            Console.WriteLine($"Ο αριθμός {number} είναι ζυγός.");
+        }
+        else
+        {
+            Console.WriteLine($"Ο αριθμός {number} είναι μονός.");
+        }
+    }
+}
