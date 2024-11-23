@@ -1,0 +1,35 @@
+<?php
+// Title: Even or Odd Checker
+// Description: This program checks if a given number is even or odd.
+
+// Function to check if a number is even or odd
+function checkEvenOrOdd($number) {
+    // If the number is divisible by 2, it is even
+    if ($number % 2 == 0) {
+        return "The number $number is even.";
+    } else {
+        // If not divisible by 2, it is odd
+        return "The number $number is odd.";
+    }
+}
+
+// Input: Ask the user to provide a number
+echo "Enter a number: ";
+$input = trim(fgets(STDIN)); // Read input from the user
+
+// Validate if the input is a number
+if (is_numeric($input)) {
+    // Convert the input to an integer and check even/odd
+    $number = (int)$input;
+    $result = checkEvenOrOdd($number);
+
+    // Output the result
+    echo $result . "\n";
+} else {
+    // If input is not a valid number, display an error
+    echo "Invalid input! Please enter a valid number.\n";
+}
+
+// End of the program
+echo "=== Program Ended ===\n";
+?>
