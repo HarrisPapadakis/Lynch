@@ -1,0 +1,44 @@
+
+
+#include <GL/glut.h>
+#include <cmath>
+
+class Cycle {
+    float kx, ky, radius;
+    float r, g, b;
+
+public:
+    // Constructor
+    Cycle(float kx, float ky, float radius) {
+        this->kx = kx;
+        this->ky = ky;
+        this->radius = radius;
+        r = g = b = 0.0; // Default color is black
+    }
+
+    // Setter for color
+    void setColor3f(float r, float g, float b) {
+        this->r = r;
+        this->g = g;
+        this->b = b;
+    }
+
+    // Function to display the circle
+    void display() {
+        glColor3f(r, g, b); // Set the color
+        glBegin(GL_TRIANGLE_FAN);
+
+        // First, add the center of the circle
+        glVertex2f(kx, ky);
+
+        // Create the circle using small line segments
+        for (int i = 0; i <= 360; i++) {
+            float theta = i * 3.1415 / 180.0; // Convert degrees to radians
+            float x = kx + radius * cos(theta);
+            float y = ky + radius * sin(theta);
+            glVertex2f(x, y);
+        }
+
+        glEnd();
+    }
+};
